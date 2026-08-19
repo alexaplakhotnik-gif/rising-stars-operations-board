@@ -1,0 +1,59 @@
+const bdProjects=[
+ {name:'Ballroom Teacher · Fred Astaire Studio USA',status:'Контракт / презентация',cls:'s-won',manager:'Александра Соколова / Юлія Колинюк',count:10,cycle:'Постоянный набор',updated:'18.08',recurring:true,steps:[['Презентованы','7'],['Предложен контракт','3']]},
+ {name:'JAR BD',status:'Презентованы',cls:'s-pres',manager:'Александра Соколова / Юлія Колинюк',count:20,cycle:'Текущий проект',updated:'18.08',recurring:false,steps:[['Презентованы','20']]},
+ {name:'Ballroom Couples · International Cruises',status:'Цикличный · в работе',cls:'s-work',manager:'Александра Соколова',count:28,cycle:'Постоянный набор',updated:'18.08',recurring:true,steps:[['Запрошено промо','2'],['Связались','1'],['Поданы на формы','1'],['Презентованы','2'],['Предложен контракт','4'],['Будущие позиции','16'],['Не удалось связаться','1'],['Не подходят','1']]},
+ {name:'Ballroom Couples · Database Update',status:'База актуализируется',cls:'s-work',manager:'Александра Соколова',count:22,cycle:'Постоянный цикл',updated:'18.08',recurring:true,steps:[['Запрошено промо','4'],['Ответили','3'],['Связались','2'],['Будущие позиции','12'],['Не удалось связаться','1']]},
+ {name:'Peel BD · October 2026',status:'Нужны статусы',cls:'s-wait',manager:'Александра Соколова',count:66,cycle:'Октябрь 2026',updated:'18.08',recurring:false,steps:[['Презентованы','8'],['Запрошено промо','1'],['Не подходят','4'],['Не удалось связаться','1'],['Проставить статус','52']]},
+ {name:'BD JAR · World Cruise Contract',status:'В работе',cls:'s-work',manager:'Yelyzaveta Kurysko',count:16,cycle:'World Cruise',updated:'18.08',recurring:false,steps:[['Переданы на подачу','4'],['Презентованы','1'],['Идёт общение','4'],['Предложен контракт','1'],['Будущие позиции','2'],['Не подходят','3'],['Проставить статус','1']]},
+ {name:'Belinda King · Ballroom & Jazz Couple',status:'Рассылка / актуализация',cls:'s-work',manager:'Yelyzaveta Kurysko / Sofiia Koreneva',count:206,cycle:'Цикличный проект',updated:'18.08',recurring:true,steps:[['Получили рассылку','108'],['Открыли рассылку','26'],['Запрошено промо','2'],['Связались','10'],['Идёт общение','1'],['Презентованы','4'],['Будущие позиции','9'],['Не удалось связаться','41'],['Не подходят','2'],['Проставить статус','3']]},
+ {name:'Ballroom Couple · Aroya Cruise',status:'В работе',cls:'s-work',manager:'Yelyzaveta Kurysko / Виктория',count:28,cycle:'Текущий проект',updated:'18.08',recurring:false,steps:[['Презентованы','5'],['Идёт общение','6'],['Будущие позиции','5'],['Не подходят','12']]},
+ {name:'Ballroom Couples · World Cruise 10/7–27',status:'В работе',cls:'s-work',manager:'Yelyzaveta Kurysko',count:46,cycle:'World Cruise',updated:'18.08',recurring:false,steps:[['Связались','7'],['Идёт общение','15'],['Презентованы','7'],['Будущие позиции','4'],['Не подходят','13']]},
+ {name:'Dinner Show Switzerland · Ballroom',status:'Есть отклики',cls:'s-work',manager:'Александра Соколова',count:15,cycle:'Winter 2026/2027',updated:'18.08',recurring:false,steps:[['Ответили','12'],['Запрошено промо','1'],['Не подходят','2']]},
+ {name:'MSC Explora · Ballroom',status:'Контракт / презентация',cls:'s-won',manager:'Александра Соколова / Юлія Колинюк',count:16,cycle:'Текущий проект',updated:'18.08',recurring:false,steps:[['Переданы на подачу','1'],['Презентованы','11'],['Предложен контракт','4']]},
+ {name:'Crystal Cruise BD',status:'Презентованы',cls:'s-pres',manager:'Александра Соколова',count:13,cycle:'Текущий проект',updated:'18.08',recurring:false,steps:[['Переданы на подачу','1'],['Презентованы','12']]},
+ {name:'Maldives BD · Festive Season',status:'Презентация',cls:'s-pres',manager:'Александра Соколова',count:14,cycle:'Festive Season',updated:'17.08',recurring:true,steps:[['Ответили','2'],['Презентованы','9'],['Не подходят','3']]},
+ {name:'Ballroom Couples · South Korea Theme Park',status:'В работе',cls:'s-work',manager:'Александра Соколова',count:5,cycle:'Текущий проект',updated:'17.08',recurring:false,steps:[['Переданы на подачу','1'],['Презентованы','1'],['Будущие позиции','2'],['Не подходят','1']]},
+ {name:'Saga · Spirit of Discovery',status:'Контракт / презентация',cls:'s-won',manager:'Александра Соколова',count:16,cycle:'Текущий проект',updated:'30.07',recurring:false,steps:[['Запрошено промо','1'],['Презентованы','6'],['Предложен контракт','2'],['Не подходят','7']]},
+ {name:'BTF · Burn the Floor BD',status:'Презентованы',cls:'s-pres',manager:'Александра Соколова / Юлія Колинюк',count:6,cycle:'2 CRM-проекта',updated:'30.07',recurring:true,steps:[['Презентованы','6']]},
+ {name:'Cunard Queen Anne BD',status:'Презентация',cls:'s-pres',manager:'Александра Соколова',count:5,cycle:'Текущий проект',updated:'28.07',recurring:false,steps:[['Ответили','1'],['Презентованы','4']]},
+ {name:'RWS · Fred Olsen Balmoral BD',status:'Презентация',cls:'s-pres',manager:'Александра Соколова',count:10,cycle:'Текущий проект',updated:'09.07',recurring:false,steps:[['Презентованы','9'],['Не подходят','1']]},
+ {name:'Ballroom Maldives',status:'Есть отклики',cls:'s-work',manager:'Александра Соколова',count:5,cycle:'Текущий проект',updated:'01.07',recurring:true,steps:[['Ответили','5']]},
+ {name:'Ballroom Couple · RCCL',status:'Предложен контракт',cls:'s-won',manager:'Ярослав / Yelyzaveta Kurysko',count:3,cycle:'Текущий запрос',updated:'13.06',recurring:true,steps:[['Предложен контракт','2'],['Идёт общение','1']]},
+ {name:'TUI BD',status:'Презентованы',cls:'s-pres',manager:'Александра Соколова',count:4,cycle:'Текущий проект',updated:'18.08',recurring:false,steps:[['Презентованы','4']]}
+];
+
+const bdStatusParameters=[
+ ['total','Всего в проекте'],['mailed','Получили рассылку'],['opened','Открыли рассылку'],
+ ['replied','Ответили'],['contacted','Связались'],['promo','Запросили промо'],['submitted','Переданы на подачу'],
+ ['presented','Презентованы'],['talking','Идёт общение'],['offered','Предложен контракт'],
+ ['future','Будущие позиции'],['unreachable','Не удалось связаться'],['unsuitable','Не подходят'],['needsStatus','Требуется статус']
+];
+function bdStats(project){
+ const values={total:project.count,mailed:0,opened:0,replied:0,contacted:0,promo:0,submitted:0,presented:0,talking:0,offered:0,future:0,unreachable:0,unsuitable:0,needsStatus:0};
+ project.steps.forEach(([label,value])=>{
+  const n=Number(value)||0,l=label.toLowerCase();
+  if(l.includes('получили рассылку'))values.mailed+=n;
+  else if(l.includes('открыли рассылку'))values.opened+=n;
+  else if(l.includes('ответили'))values.replied+=n;
+  else if(l.includes('связал'))values.contacted+=n;
+  else if(l.includes('промо'))values.promo+=n;
+  else if(l.includes('передан'))values.submitted+=n;
+  else if(l.includes('презент'))values.presented+=n;
+  else if(l.includes('общен'))values.talking+=n;
+  else if(l.includes('контракт'))values.offered+=n;
+  else if(l.includes('будущ'))values.future+=n;
+  else if(l.includes('связаться'))values.unreachable+=n;
+  else if(l.includes('не подход'))values.unsuitable+=n;
+  else if(l.includes('статус'))values.needsStatus+=n;
+ });
+ return values;
+}
+
+(function renderBdProjects(){
+ const root=document.getElementById('bd-vacancies');if(!root)return;
+ const bdMail=window.getSendPulseStats?.('bd-update')||{sent:0,delivered:0,opened:0,clicks:0,errors:0};
+ root.innerHTML=`<style>
+ .bdv-activity{margin:0 24px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:11px 13px}.bdv-activity-title{font-weight:700;margin-bottom:8px}.bdv-activity-grid{display:grid;grid-template-columns:repeat(4,minmax(130px,1fr));gap:7px}.bdv-activity-item{background:#eef2f7;border-radius:8px;padding:8px 10px}.bdv-activity-item b{display:block;font-size:19px}.bdv-people{font-size:11px;color:var(--mut);margin-top:8px}.bdv-box{margin:0 24px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;overflow:hidden}.bdv-box>summary{display:flex;justify-content:space-between;align-items:center;padding:10px 13px;cursor:pointer;font-weight:700;list-style:none}.bdv-box>summary::-webkit-details-marker{display:none}.bdv-summary-meta{font-size:11px;color:var(--hi);font-weight:600}.bdv-box[open] .bdv-summary-meta::after{content:'свернуть ▴'}.bdv-box:not([open]) .bdv-summary-meta::after{content:'показать ▾'}.bdv{padding:0 6px 6px;display:grid;gap:6px}.bdv-card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}.bdv-row{display:grid;grid-template-columns:minmax(260px,1.8fr) minmax(145px,.7fr) minmax(170px,.9fr) 70px 82px;gap:10px;align-items:center;padding:9px 13px;cursor:pointer}.bdv-row:hover{background:#f7f9fc}.bdv-name{font-weight:700}.bdv-meta{font-size:11px;color:var(--mut)}.bdv-count{text-align:center;font-weight:700}.bdv-open{display:none;padding:10px 13px 13px;background:#fafbfe;border-top:1px solid var(--line)}.bdv-card.open .bdv-open{display:block}.bdv-arrow{color:var(--hi);text-align:right;white-space:nowrap}.bdv-steps{display:flex;gap:7px;flex-wrap:wrap}.bdv-step{background:#eef2f7;border-radius:8px;padding:7px 10px;min-width:130px}.bdv-step b{font-size:17px;display:block}.bdv-note{font-size:11px;color:var(--mut);margin-top:8px}@media(max-width:760px){.bdv-activity{margin-left:16px;margin-right:16px}.bdv-activity-grid{grid-template-columns:1fr 1fr}.bdv-box{margin-left:16px;margin-right:16px}.bdv-row{grid-template-columns:1fr auto}.bdv-row .bdv-meta{grid-column:1/-1}.bdv-count{display:none}}
+ </style><div class="bdv-activity"><div class="bdv-activity-title">Актуализация базы BD · работа за 17.08</div><div class="bdv-activity-grid"><div class="bdv-activity-item"><span class="bdv-meta">Новых контактов</span><b>34</b></div><div class="bdv-activity-item"><span class="bdv-meta">Контактов за месяц</span><b>388</b></div><div class="bdv-activity-item"><span class="bdv-meta">Ответов за месяц</span><b>14</b></div><div class="bdv-activity-item"><span class="bdv-meta">Перспективных</span><b>1</b></div><div class="bdv-activity-item"><span class="bdv-meta">SendPulse: отправлено</span><b>${bdMail.sent}</b></div><div class="bdv-activity-item"><span class="bdv-meta">Доставлено</span><b>${bdMail.delivered}</b></div><div class="bdv-activity-item"><span class="bdv-meta">Открыто</span><b>${bdMail.opened}</b></div><div class="bdv-activity-item"><span class="bdv-meta">Переходы / ошибки</span><b>${bdMail.clicks} / ${bdMail.errors}</b></div></div><div class="bdv-people">17.08: Альона — Facebook 13, Instagram 11; Вероніка — Facebook 10. Новых ответов за день — 0. Источники: отчёт BD из почты + SendPulse.</div></div><details class="bdv-box"><summary><span>Вакансии и цикличные проекты из CRM · ${bdProjects.length}</span><span class="bdv-summary-meta"></span></summary><div class="bdv">${bdProjects.map(p=>{const stats=bdStats(p);return`<article class="bdv-card"><div class="bdv-row" role="button" tabindex="0" aria-expanded="false"><div><div class="bdv-name">${p.name}</div><div class="bdv-meta">${p.cycle}${p.recurring?' · цикличный':''} · обновлено ${p.updated}</div></div><span class="b ${p.cls}">${p.status}</span><span class="bdv-meta">${p.manager}</span><span class="bdv-count">${p.count}</span><span class="bdv-arrow">этапы ▾</span></div><div class="bdv-open"><div class="bdv-steps">${bdStatusParameters.map(([key,label])=>`<div class="bdv-step"><span class="bdv-meta">${label}</span><b>${stats[key]}</b></div>`).join('')}</div><div class="bdv-note">Источник: живые CRM-проекты · срез 18.08.2026 · количество означает карточки кандидатов, не пары.</div></div></article>`}).join('')}</div></details>`;
+ root.querySelectorAll('.bdv-row').forEach(row=>{const toggle=()=>{const card=row.closest('.bdv-card'),open=card.classList.toggle('open');row.setAttribute('aria-expanded',String(open));row.querySelector('.bdv-arrow').textContent=open?'свернуть ▴':'этапы ▾'};row.addEventListener('click',toggle);row.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggle()}})});
+})();
