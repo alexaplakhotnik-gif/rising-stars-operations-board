@@ -2,7 +2,7 @@
 <title>Rising Stars — Табло запросов (концепт)</title>
 <style>
 :root{--bg:#f4f6f9;--card:#ffffff;--line:#e3e8ef;--tx:#1f2a37;--mut:#6b7a8d;--acc:#1f9d63;--red:#d64541;--amber:#c07d16;--hi:#2f6fed;--pur:#6b5cd6}
-*{box-sizing:border-box}body{margin:0;font:14px/1.45 -apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx)}
+*{box-sizing:border-box}html,body{max-width:100%;overflow-x:hidden}body{margin:0;font:14px/1.45 -apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--tx)}
 header{padding:18px 24px;border-bottom:1px solid var(--line);background:var(--card);display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
 h1{font-size:19px;margin:0}.sub{color:var(--mut);font-size:12px}
 .badge-demo{background:#fbf1dc;color:var(--amber);border:1px solid #eBd9b0;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
@@ -44,8 +44,8 @@ td.nm{font-weight:600}td.nm a{color:var(--hi);text-decoration:none}td.nm a:hover
 tr:hover td{background:#f7f9fc}
 [hidden]{display:none!important}
 @media(max-width:680px){
- header{padding:14px 16px}h1{font-size:16px}
- .tabs{padding:8px 12px 0}
+ header{padding:14px 16px;display:block}header>div:last-child{text-align:left!important;margin-top:10px}h1{font-size:17px}
+ .tabs{padding:8px 12px 0;overflow-x:auto;max-width:100%;scrollbar-width:none;-webkit-overflow-scrolling:touch}.tabs::-webkit-scrollbar{display:none}.tab{flex:0 0 auto;white-space:nowrap;padding:9px 13px}
  .tiles{padding:12px 16px;gap:8px;grid-template-columns:repeat(2,1fr)}
  .tile .tv{font-size:22px}
  h2{margin:14px 16px 6px}
@@ -57,6 +57,26 @@ tr:hover td{background:#f7f9fc}
  .wrap{padding:0 16px 32px}
  .legend{padding:8px 16px 0}
  .hscroll-hint{display:block}
+}
+@media(max-width:520px){
+ .tiles{grid-template-columns:1fr;padding:12px}
+ .tile{padding:12px 14px}.tile .tv{font-size:24px}
+ .controls,.req-controls{padding-left:12px;padding-right:12px;margin-left:0!important;margin-right:0!important}
+ .wrap,.req-table-wrap{padding:0 12px 28px;margin:0!important;max-width:100vw;overflow:visible}
+ .hscroll-hint{display:none}
+ table#kpi-table,table#ct-table,.req-table{display:block;width:100%;min-width:0;border:0;background:transparent;overflow:visible}
+ #kpi-table thead,#ct-table thead,.req-table thead{display:none}
+ #kpi-table tbody,#ct-table tbody,.req-table tbody{display:grid;gap:10px;width:100%}
+ #kpi-table tbody tr,#ct-table tbody tr,.req-table tbody tr.req-main{display:grid;grid-template-columns:1fr 1fr;gap:0 12px;width:100%;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:0 1px 2px rgba(16,24,40,.04)}
+ #kpi-table td,#ct-table td,.req-main td{display:block;border:0;padding:6px 0;min-width:0;white-space:normal;overflow-wrap:anywhere}
+ #kpi-table td::before,#ct-table td::before,.req-main td::before{display:block;color:var(--mut);font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;margin-bottom:2px}
+ #kpi-table td:first-child,#ct-table td:first-child,.req-main td:first-child{grid-column:1/-1;font-size:15px;padding-top:0}
+ #kpi-table td:nth-child(1)::before{content:'Менеджер'}#kpi-table td:nth-child(2)::before{content:'Департамент'}#kpi-table td:nth-child(3)::before{content:'Часы · 18.08'}#kpi-table td:nth-child(4)::before{content:'Сегодня · арт. / през.'}#kpi-table td:nth-child(5)::before{content:'За месяц · арт. / през.'}#kpi-table td:nth-child(6)::before{content:'Предложений'}#kpi-table td:nth-child(7)::before{content:'Потенциальная комиссия'}#kpi-table td:nth-child(8)::before{content:'Улетели'}#kpi-table td:nth-child(9)::before{content:'Заключено'}
+ #ct-table td:nth-child(1)::before{content:'Артист / состав'}#ct-table td:nth-child(2)::before{content:'Департамент'}#ct-table td:nth-child(3)::before{content:'Площадка'}#ct-table td:nth-child(4)::before{content:'Позиция'}#ct-table td:nth-child(5)::before{content:'Менеджер'}#ct-table td:nth-child(6)::before{content:'Источник'}#ct-table td:nth-child(7)::before{content:'Контракт'}#ct-table td:nth-child(8)::before{content:'До завершения'}#ct-table td:nth-child(9)::before{content:'Статус'}
+ .req-main td:nth-child(1)::before{content:'Вакансия'}.req-main td:nth-child(2)::before{content:'Клиент / заказчик'}.req-main td:nth-child(3)::before{content:'Контакт'}.req-main td:nth-child(4)::before{content:'Тип'}.req-main td:nth-child(5)::before{content:'Страна'}.req-main td:nth-child(6)::before{content:'Статус'}.req-main td:nth-child(7)::before{content:'Приоритет'}.req-main td:nth-child(8)::before{content:'Ответственный'}.req-main td:nth-child(9)::before{content:'Подано'}.req-main td:nth-child(10)::before{content:'Дедлайн / старт'}.req-main td:nth-child(11)::before{content:'Без движения'}.req-main td:nth-child(12)::before{content:'Источник'}
+ .req-main .req-chevron{grid-column:1/-1;text-align:center;background:#eef2f7;border-radius:8px;padding:8px;margin-top:5px}.req-main .req-chevron::before{content:''}
+ .req-detail{display:block;width:100%}.req-detail>td{display:block;padding:0!important;border:0}.req-detail .vac-panel{border:1px solid var(--line);border-radius:12px;margin-top:-4px;padding:12px}
+ .funnel-unified{display:grid;grid-template-columns:1fr 1fr}.funnel-unified .fun-c{min-width:0}
 }
 .hscroll-hint{display:none;color:var(--mut);font-size:11px;padding:6px 16px 0}
 .src-ads{background:#fde7d6;color:#a9560f}.src-promo{background:#e4eefd;color:#2158c9}.src-man{background:#eef1f5;color:#5f6b7a}
